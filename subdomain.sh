@@ -29,7 +29,7 @@ cat $domain/*.txt | grep -E *.$domain | sort -u | tee -a $domain/main.txt
 
 rm -rf $domain/s1.txt $domain/s2.txt $domain/s3.txt $domain/s4.txt $domain/s5.txt $domain/s6.txt
 
-cat $domain/main.txt | aquatone -ports large > aquatone/file.txt 
+cat $domain/main.txt | aquatone -ports large > $domain/aquatone/file.txt 
 
 cat $domain/main.txt | waybackurls > $domain/wabackurls/row.txt 
 cat $domain/wabackurls/wayback.txt | egrep -v "\.woff|\.ttf|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico|\.html" | sed 's/:80//g;s/443//g' | sort -u >> wayback.txt
