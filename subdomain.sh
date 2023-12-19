@@ -32,7 +32,7 @@ rm -rf $domain/s1.txt $domain/s2.txt $domain/s3.txt $domain/s4.txt $domain/s5.tx
 cat $domain/main.txt | aquatone -ports large > $domain/aquatone/file.txt 
 
 cat $domain/main.txt | waybackurls > $domain/wabackurls/row.txt 
-cat $domain/wabackurls/wayback.txt | egrep -v "\.woff|\.ttf|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico|\.html" | sed 's/:80//g;s/443//g' | sort -u >> wayback.txt
+cat $domain/wabackurls/row.txt | egrep -v "\.woff|\.ttf|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico|\.html" | sed 's/:80//g;s/443//g' | sort -u >> wayback.txt
 
 
 #cat main.txt | waybackurls > wayback.txt | egrep -V "\.woff|\.ttf|\.eot|\.png|\.jpeg|\.jpg|\.svg|\.css|\.ico|\.html" | sed 's/:80//g;s/443//g' | sort -u
